@@ -1,25 +1,46 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 
-class App extends Component {
+//Counter App Using Class
 
-  state = {
-    count: 0
+// class App extends Component {
+
+//   state = {
+//     count: 0
+//   }
+
+//   increment =() =>{
+//     this.setState({
+//       count: this.state.count+1
+//     })
+//   }
+
+//   render(){
+//     return  (
+//       <div>
+//         <h2>Counter App</h2>
+//         <button onClick={this.increment}>Clicked {this.state.count} times</button>
+//       </div>
+//     );
+//   }
+// }
+
+const App = () =>{
+  //count - the current state value
+  //setCount - function that let us update the state
+  //0 - the default value
+  const [count, setCount] = useState(0)
+
+  const increment = () =>{
+    setCount(count +1)
   }
 
-  increment =() =>{
-    this.setState({
-      count: this.state.count+1
-    })
-  }
-
-  render(){
-    return  (
-      <div>
+  return(
+    <div>
         <h2>Counter App</h2>
-        <button onClick={this.increment}>Clicked {this.state.count} times</button>
-      </div>
-    );
-  }
+        <button onClick={increment}>Clicked {count} times</button>
+    </div>
+  )
+ 
 }
 
 export default App
