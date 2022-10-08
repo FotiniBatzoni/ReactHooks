@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 
 //Counter App Using Class
 
@@ -14,6 +14,14 @@ import React, { Component, useState } from 'react'
 //     })
 //   }
 
+//   componentDidMount(){
+//     document.title = `Clicked ${this.state.count} times`
+//   }
+
+//   componentDidUpdate(){
+//     document.title = `Clicked ${this.state.count} times`
+//   }
+
 //   render(){
 //     return  (
 //       <div>
@@ -24,11 +32,17 @@ import React, { Component, useState } from 'react'
 //   }
 // }
 
+//Use State
+
 const App = () =>{
   //count - the current state value
   //setCount - function that let us update the state
   //0 - the default value
   const [count, setCount] = useState(0)
+
+  useEffect(()=>{
+    document.title = `Clicked ${count} times`
+  })
 
   const increment = () =>{
     setCount(count +1)
